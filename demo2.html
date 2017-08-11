@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>string转object-兼容低版本浏览器（eval实现）</title>
+	</head>
+	<body>
+		<p style="white-space: pre-line; font-size: 18px;">
+		ie8(兼容模式),ie7和ie6没有JSON对象，不过http://www.json.org/提供了一个json.js,
+		这样ie8(兼容模式),ie7和ie6就可以支持JSON对象以及其stringify()和parse()方法；
+		你可以在https://github.com/douglascrockford/JSON-js上获取到这个js，一般现在用json2.js。
+
+		ie8(兼容模式),ie7和ie6可以使用eval()将字符串转为JSON对象，
+		eval("("+c+")")
+		</p>
+		
+		<!--兼容ie6/7/8--引入json2.js文件-->
+		<script src="js/json2.js"></script>
+		<script type="text/javascript">
+			
+			var c='{"name":"郑秀晶","sex":"女","age":"23","height":"165","weight":"95g"}';
+			console.log(c);
+			console.log(typeof(c));  //string
+			
+			var cToObj=eval("("+c+")");
+			console.log(typeof(cToObj));       //object
+			
+		</script>
+	</body>
+</html>

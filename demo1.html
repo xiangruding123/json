@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>json对象和json字符串之间的转换-JavaScript实现</title>
+		
+	</head>
+	<body>
+		<p><a href="http://www.css88.com/archives/3919">资源链接地址：http://www.css88.com/archives/3919</a></p>
+		<p>在Firefox，chrome，opera，safari，ie9，ie8等高级浏览器直接可以用JSON对象的stringify()和parse()方法。</p>
+		<script type="text/javascript">
+			var a = {
+				"name": "ZhangYongFeng",
+				"sex": "男",
+				"age": "105",
+				"height": "180cm",
+				"weight": "150g"
+			};
+			
+			var b = '{"name":"XiangRuDing","sex":"女","age":"109","height":"166cm","weight":"95g"}';
+			
+			console.log(a)    //这是一个json对象类型的数据
+			console.log(b)    //这是一个json字符串类型的数据
+			
+			console.log(typeof(a))      //object (数据类型为：json对象)
+			console.log(typeof(b))      //string  （数据类型为：json字符串）
+
+			/*
+			 * 在Firefox，chrome，opera，safari，ie9，ie8等高级浏览器直接可以用JSON对象的stringify()和parse()方法。
+			 * 
+			 * JSON.stringify(obj)   将JSON转为字符串。
+			 * 
+			 * JSON.parse(string)    将字符串转为JSON格式。
+			 * 
+			 * */
+			
+			var aToStr=JSON.stringify(a);
+			console.log(aToStr)  //string
+ 			console.log(typeof(aToStr));  //string （转换成了string类型数据）
+ 			
+ 			
+			var bToObj=JSON.parse(b);
+			console.log(bToObj)  //object
+			console.log(typeof(bToObj));//object  （转换成了object类型数据）
+			
+		</script>
+	</body>
+
+</html>
